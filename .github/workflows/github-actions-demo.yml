@@ -60,7 +60,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: npm run start
 
       - name: Archive application
         run: zip -r my-app.zip .
