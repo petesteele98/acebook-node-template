@@ -31,7 +31,10 @@ jobs:
 
       - name: Run linter
         run: npm run lint
-
+      
+      - name: Run test sever
+        run: npm run start:test
+        
       - name: Run tests
         run: npm test
 
