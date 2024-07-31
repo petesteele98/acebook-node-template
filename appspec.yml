@@ -1,0 +1,9 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/my_application
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      runas: root
