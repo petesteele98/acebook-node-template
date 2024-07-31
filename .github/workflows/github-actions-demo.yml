@@ -14,12 +14,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to the latest version
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '16'  # Specify Node.js 16
 
       - name: Install dependencies
         run: npm install
@@ -36,12 +36,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to the latest version
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '16'  # Specify Node.js 16
 
       - name: Install dependencies
         run: npm install
@@ -68,5 +68,4 @@ jobs:
         run: |
           aws deploy create-deployment \
             --application-name ${{ secrets.CODEDEPLOY_APPLICATION_NAME }} \
-            --deployment-group-name ${{ secrets.CODEDEPLOY_DEPLOYMENT_GROUP_NAME }} \
-            --s3-location bucket=${{ secrets.S3_BUCKET }},bundleType=zip,key=my-app.zip
+            --deployment-group-name ${{ secrets.CODEDEPLOY_DEPLOYMENT
