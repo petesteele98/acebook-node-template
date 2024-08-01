@@ -9,12 +9,6 @@ sudo yum update -y
 # Install Node.js and npm
 sudo yum install -y nodejs npm
 
-# Create the deployment directory if it doesn't exist
-sudo mkdir -p /opt/my_application
-
-# Change to the deployment directory
-cd /opt/my_application
-
 # Remove existing node_modules and package-lock.json if they exist
 rm -rf node_modules package-lock.json
 
