@@ -25,9 +25,14 @@ jobs:
         uses: supercharge/mongodb-github-action@1.6.0
         with:
           mongodb-version: '5.0.28'
-
       - name: Install dependencies
-        run: npm install --no-save
+        run: |
+          if [ -d node_modules ] && [ "$(ls -A node_modules)" ]; then
+            echo "node_modules directory exists and is not empty. Skipping npm install."
+          else
+            npm install
+          fi
+
 
       - name: Run linter
         run: npm run lint
