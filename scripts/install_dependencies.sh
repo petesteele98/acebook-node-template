@@ -3,11 +3,11 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# Update package lists for Debian-based systems
-sudo apt-get update
+# Update package lists for Red Hat-based systems
+sudo yum update -y
 
 # Install Node.js and npm
-sudo apt-get install -y nodejs npm
+sudo yum install -y nodejs npm
 
 # Change to the deployment directory (adjust the path as needed)
 cd /opt/my_application
