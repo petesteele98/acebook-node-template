@@ -1,23 +1,19 @@
 #!/bin/bash
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
+# Update package lists for Debian-based systems
+sudo apt-get update
+
 # Install Node.js and npm
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo yum install -y nodejs
+sudo apt-get install -y nodejs npm
 
-# Install Cypress
-npm install cypress@12.14 --save-dev
+# Change to the deployment directory (adjust the path as needed)
+cd /opt/my_application
 
-# Install ESLint
-npm install eslint@8.10 --save-dev
+# Remove existing node_modules and package-lock.json if they exist
+rm -rf node_modules package-lock.json
 
-# Install Jest
-npm install jest@27.5 --save-dev
-
-# Install Mongoose
-npm install mongoose@5.8 --save
-
-# Install other dependencies
-# ...
-
-# Run npm install to install remaining dependencies
-sudo npm install
+# Install dependencies
+npm install
