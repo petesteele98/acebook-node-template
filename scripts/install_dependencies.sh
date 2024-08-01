@@ -2,7 +2,7 @@
 
 # Install Node.js and npm
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo yum install -y nodejs
 
 # Install Cypress
 npm install cypress@12.14 --save-dev
